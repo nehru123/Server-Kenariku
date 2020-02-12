@@ -22,8 +22,27 @@ const BurungSchema = new Schema({
     type: String,
     required: true
   },
-
   jenis_kelamin: {
+    type: String,
+    required: true
+  },
+  harga: {
+    type: String,
+    required: true
+  },
+  status: {
+    type: String,
+    required: true
+  },
+  image1: {
+    type: String,
+    required: true
+  },
+  image2: {
+    type: String,
+    required: true
+  },
+  image3: {
     type: String,
     required: true
   }
