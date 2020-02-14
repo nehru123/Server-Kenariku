@@ -9,6 +9,14 @@ const GallerySchema = new Schema({
   deskripsi: {
     type: String,
     default: true
+  },
+  Foto: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
