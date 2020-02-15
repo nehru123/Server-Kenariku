@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const GallerySchema = new Schema({
+  namaBurung: {
+    type: String,
+    required: true
+  },
+
   judul: {
     type: String,
     required: true
@@ -10,10 +15,11 @@ const GallerySchema = new Schema({
     type: String,
     default: true
   },
-  Foto: {
+  foto: {
     type: String,
-    required: true
+    default: true
   },
+
   date: {
     type: Date,
     default: Date.now
