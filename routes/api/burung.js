@@ -18,12 +18,11 @@ router.post("/add", (req, res) => {
     jenis: req.body.jenis,
     warna: req.body.warna,
     deskripsi: req.body.deskripsi,
-    umur: req.body.umur,
+    tanggal: req.body.tanggal,
     harga: req.body.harga,
     jenis_kelamin: req.body.jenis_kelamin,
     status: 1,
     breeding: 0,
-
     image1: req.body.image1,
     image2: req.body.image2,
     image3: req.body.image3
@@ -61,7 +60,7 @@ router.put("/update/:id", (req, res) => {
           jenis: req.body.jenis,
           warna: req.body.warna,
           deskripsi: req.body.deskripsi,
-          umur: req.body.umur,
+          tanggal: req.body.tanggal,          
           harga: req.body.harga,
           status: 1,
           jenis_kelamin: req.body.jenis_kelamin,
@@ -81,11 +80,9 @@ router.put("/update/:id", (req, res) => {
 router.get("/findReport/:id", (req, res) => {
   Burung.findById(req.params.id)
     .then(hasil => {
-      Report.find({ nama: hasil.name })
-        .sort({ tanggal: -1, jam: -1 })
-        .then(burungs => {
-          return res.status(200).json({ success: true, data: burungs });
-        });
+      Report.find({nama: hasil.name},).sort({tanggal:-1, jam: -1}).then(burungs => {
+    return res.status(200).json({ success: true, data: burungs });
+  });
     })
     .catch(err =>
       res.status(400).json({
