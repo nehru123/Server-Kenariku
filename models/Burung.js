@@ -27,8 +27,7 @@ const BurungSchema = new Schema({
     required: true
   },
   harga: {
-    type: String,
-    required: true
+    type: String
   },
   status: {
     type: String,
